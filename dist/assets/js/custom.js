@@ -2678,4 +2678,8 @@ function contactValidator() {
             return false;
         }
     });
+
+    $.get('https://api.openweathermap.org/data/2.5/weather?q=casablanca&appid=923401310fb8f2a8c1dcb3796e756328', function(data) {
+        console.log(data.main.temp - 274)
+    })
 }
