@@ -9,8 +9,8 @@
 </head>
 <body>
     
-    <form>
-        <input type="text" placeholder="City name...">
+    <form action="/.netlify/functions/api/user" method="POST">
+        <input type="text" placeholder="City name..." name="user">
         <button type="submit">Get</button>
     </form>
 
@@ -19,12 +19,12 @@
     <script>
         $(document).ready(function() {
 
-            $('form').on('submit', function(e) {
-                e.preventDefault()
-                $.get(`https://api.openweathermap.org/data/2.5/weather?q=${$('input').val()}&appid=923401310fb8f2a8c1dcb3796e756328`, function(data) {
-                    $('h2').text(data.main.temp)
-                })
-            })
+            // $('form').on('submit', function(e) {
+            //     // e.preventDefault()
+            //     // $.get(`https://api.openweathermap.org/data/2.5/weather?q=${$('input').val()}&appid=923401310fb8f2a8c1dcb3796e756328`, function(data) {
+            //     //     $('h2').text(data.main.temp)
+            //     // })
+            // })
 
         })
     </script>
