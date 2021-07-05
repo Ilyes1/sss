@@ -5,11 +5,7 @@ const serverless = require('serverless-http')
 const app = express()
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.json({
-        'hello': 'iLyes'
-    })
-})
+router.use(express.static('dist'))
 
 app.use('/.netlify/functions/api', router)
 
